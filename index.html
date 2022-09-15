@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"/>
+    <title>Ahorcado</title>
+</head>
+<body>
+    <header>
+        <img src="./img/logoAlura.png"/>
+    </header>
+    <main>
+        <section id="home">
+            <button href="./play.html" class="btn-start" id="btn-start">Iniciar juego</button>
+            <a href="./newWord.html" class="btn-new-word">Agregar nueva palabra</a>
+        </section>
+
+        <section id="play">
+            <div class="response">
+                <canvas id="board" width="1200" height="1200"></canvas>
+                <div class="rightLetters"></div>
+                <div class="wrongLetters"></div>
+            </div>
+    
+            <div class="btn-container">
+                <a href="./play.html" class="btn-new-game">Nuevo juego</a>
+                <a href="./index.html" class="btn-decline">Desistir</a>
+            </div>
+        </section>
+    </main>
+    <footer id="footer">
+        <img src="./img/github.png" alt="Github"/>
+        <img src="./img/linkedin.png" alt="Linkedin"/>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="./index.js"></script>
+    <script src="./canva.js"></script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Light Mode */
+    --primary-color: #0A3871;
+    --primary-dark-color: #000;
+    --primary-light-color: #0A387180;
+    --secondary-color: #F7ECDE;
+    --secondary-light-color: #FEFEFE;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+header img{
+    width: 5vw;
+    margin: 1rem auto 0 1rem;
+}
+
+#home{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 85vh;
+}
+
+.btn-start,
+.btn-new-word{
+    text-align: center;
+    text-decoration: none;
+    border-radius: 20px;
+}
+
+.btn-start{
+    padding: 2rem;
+    width: 15rem;
+    margin-bottom: 1rem;
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--secondary-light-color);
+}
+
+.btn-new-word{
+    padding: 1rem;
+    width: 14rem;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+footer{
+    background-color: var(--secondary-color);
+    padding: 1rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+footer img{
+    margin: 0.5rem;
+    width: 2rem;
+}
+
+#play{
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 90vh;
+    margin: 0 1rem;
+}
+
+
+/* Section to add a new word */
+
+#new-word{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 90vh;
+    margin: 0 1rem;
+}
+
+.new-word-container,
+.response{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 70vh;
+}
+
+.add-new-word{
+    border: none;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    height: 4rem;
+}
+
+.add-new-word::placeholder{
+    color: var(--primary-light-color);
+    font-size: 1.5rem;
+}
+
+.info{
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    color: var(--primary-color);
+}
+
+.info img{  
+    margin-right: .5rem;
+}
+
+.btn-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 20vh;
+}
+
+.btn-save,
+.btn-cancel,
+.btn-new-game,
+.btn-decline{
+    padding: 1.5rem;
+    border-radius: 15px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn-save,
+.btn-new-game{
+    color: var(--secondary-light-color);
+    background-color: var(--primary-color);
+    border: none;
+}
+
+.btn-cancel,
+.btn-decline{
+    border: 1px solid var(--primary-color);
+    background-color: var(--secondary-light-color);
+    color: var(--primary-color);
+}
+
+/* Section to play the game */
+
+.btn-new-game,
+.btn-decline{
+    padding: 1.5rem;
+    border-radius: 15px;
+    text-align: center;
+    text-decoration: none;
+}
+
+
+/* Responsive */
+
+@media(min-width: 768px){
+    header img{
+        width: 2.5rem;
+    }
+    
+    .btn-container{
+        flex-direction: row;
+        align-items: center;
+        height: 10vh;
+    }
+
+    .btn-new-game,
+    .btn-decline,
+    .btn-save,
+    .btn-cancel{
+       width: 20rem; 
+       height: 8vh;
+    }
+
+    #new-word,
+    #play{
+        width: 45rem;
+        margin: 0 auto;
+    }
+
+}
+
+@media(min-width: 1440px){
+    header{
+        width: 1440px;
+        margin:  0 auto;
+    }
+}
