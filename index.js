@@ -7,16 +7,38 @@ window.onload = function () {
     ];
     let randomWord = "";
     let board = document.getElementById("board").getContext("2d");
+    let home = document.getElementById("home");
+    let footer = document.getElementById("footer");
+    let playroom = document.getElementById("play");
+    let newWord = document.getElementById("new-word");
 
     //Inicia el juego
-    document.getElementById("btn-start").onclick = (e) => {
-        e.preventDefault();
-        show();
+    document.getElementById("btn-start").onclick = () => {
+        startPlay();
+        secretWord();
+        drawCanvas();
+        drawLines();
+    }
+    
+    //Sortea una nueva palabra
+    document.getElementById("btn-new-game").onclick = () => {
         secretWord();
         drawCanvas();
         drawLines();
     }
 
+    //Vuelve a home
+    document.getElementById("btn-decline").onclick = (e) => {
+        e.preventDefault();
+        goHome();
+    }
+
+    //Agrega nueva palabra
+    document.getElementById("btn-new-word").onclick = () => {
+        addNewWord();
+    }
+
+    //Canvas
     function drawCanvas(){
         //Estilos
         board.lineWidth = 8;
@@ -60,11 +82,24 @@ window.onload = function () {
         randomWord = array[randomItem];
     }
     
-    //Oculta seccion de inicio
-    function show(){
-        document.getElementById("home").style.display = "none";
-        document.getElementById("footer").style.display = "none";
-        document.getElementById("play").style.display = "block";
+    //Muestra sección de juego
+    function startPlay(){
+        home.style.display = "none";
+        footer.style.display = "none";
+        playroom.style.display = "block";
     }
-
+    
+    //Vuelve al inicio
+    function goHome(){
+        playroom.style.display = "none";
+        home.style.display = "flex";
+        footer.style.display = "block";
+    }
+    
+    //Muestra sección para agregar nueva palabra
+    function addNewWord(){
+        home.style.display = "none";
+        footer.style.display = "none";
+        newWord.style.display = "block";
+    }
 }

@@ -13,8 +13,8 @@
     </header>
     <main>
         <section id="home">
-            <button href="./play.html" class="btn-start" id="btn-start">Iniciar juego</button>
-            <a href="./newWord.html" class="btn-new-word">Agregar nueva palabra</a>
+            <button class="btn-start" id="btn-start">Iniciar juego</button>
+            <button class="btn-new-word" id="btn-new-word">Agregar nueva palabra</button>
         </section>
 
         <section id="play">
@@ -25,8 +25,28 @@
             </div>
     
             <div class="btn-container">
-                <a href="./play.html" class="btn-new-game">Nuevo juego</a>
-                <a href="./index.html" class="btn-decline">Desistir</a>
+                <button class="btn-new-game" id="btn-new-game">Nuevo juego</button>
+                <button class="btn-decline" id="btn-decline">Desistir</button>
+            </div>
+        </section>
+
+        <section id="new-word">
+            <div class="new-word-container">
+                <input 
+                    type="text"
+                    class="add-new-word" 
+                    id="add-new-word"
+                    placeholder="Ingrese una palabra"
+                />
+                <label for="add-new-word" class="info">
+                    <img src="./img/logoAlerta.png"/>
+                    Máx. de 8 letras
+                </label>
+            </div>
+
+            <div class="btn-container">
+                <button class="btn-save">Guardar y empezar</button>
+                <button class="btn-cancel">Cancelar</button>
             </div>
         </section>
     </main>

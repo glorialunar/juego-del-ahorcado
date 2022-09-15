@@ -80,7 +80,7 @@ footer img{
 /* Section to add a new word */
 
 #new-word{
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: space-around;
     height: 90vh;
