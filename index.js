@@ -27,18 +27,33 @@ window.onload = function () {
         drawLines();
     }
 
-    //Vuelve a home
-    document.getElementById("btn-decline").onclick = (e) => {
-        e.preventDefault();
+    //Vuelve a home desde playroom
+    document.getElementById("btn-decline").onclick = () => {
+        goHome();
+    }
+    
+    //Vuelve a home desde newWord
+    document.getElementById("btn-cancel").onclick = () => {
         goHome();
     }
 
-    //Agrega nueva palabra
+    //Abre seccion de nueva palabra
     document.getElementById("btn-new-word").onclick = () => {
         addNewWord();
     }
 
+    //Agrega nueva palabra
+    document.getElementById("btn-save").onclick = () => {
+        pushNewWord();
+        startPlay();
+        secretWord();
+        drawCanvas();
+        drawLines();
+    }
+
     //Canvas
+    //-------------------------------------------------------//
+    //Dibuja el canvas
     function drawCanvas(){
         //Estilos
         board.lineWidth = 8;
@@ -57,6 +72,7 @@ window.onload = function () {
         board.closePath();
     }
 
+    //Dibuja las lineas de la palabra sorteada
     function drawLines(){
         //Estilos
         board.lineWidth = 6;
@@ -76,12 +92,25 @@ window.onload = function () {
         board.closePath();
     }
     
+
+    //Funcionalidades
+    //-------------------------------------------------------//
     //Seleccion  de la palabra secreta
     function secretWord(){
         let randomItem = Math.floor(Math.random()*array.length);
         randomWord = array[randomItem];
+        console.log(randomWord);
+    }
+
+    function pushNewWord(){
+        let nuevaPalabra = document.getElementById("add-new-word");
+        array.push(nuevaPalabra.value);
+        console.log(array);
     }
     
+
+    //Mostrar y ocultar
+    //-------------------------------------------------------//
     //Muestra sección de juego
     function startPlay(){
         home.style.display = "none";
